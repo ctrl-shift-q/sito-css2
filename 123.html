@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Escape Room Magicus</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        #messaggio {
+            color: #ff4d4d;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Escape Room Magicus</h1>
+    <p>Decifra il codice segreto per uscire dalla stanza:</p>
+    <h2>VHFUHW123</h2>
+
+    <input type="text" id="passwordInput" placeholder="Inserisci il codice decifrato">
+    <button onclick="controllaPassword()">Submit</button>
+
+    <p id="messaggio"></p>
+
+    <script>
+        function controllaPassword() {
+            // Prende il testo inserito, rimuove spazi inutili e lo converte in maiuscolo
+            const input = document.getElementById("passwordInput").value.trim().toUpperCase();
+            
+            // Password decifrata corretta (VHFUHW123 -> SECRET123)
+            const passwordCorretta = "SECRET123";
+            
+            // INSERISCI QUI IL LINK DEL TUO SITO
+            const sitoDestinazione = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcOk5Az0zqWaZwc4ZLrQdkWcRZDEr5e_wvISsTcIeie0AV6y3WUGalUcqF&s=10";
+
+            if (input === passwordCorretta) {
+                // Reindirizza al sito scelto
+                window.location.href = sitoDestinazione;
+            } else {
+                // Mostra un messaggio di errore se sbagliata
+                document.getElementById("messaggio").textContent = "haha babbo quirere es un codes errato";
+            }
+        }
+    </script>
+
+</body>
+</html>
